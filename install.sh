@@ -264,6 +264,18 @@ installMySQL()
        apt -y update
        apt -y install mariadb-server
      ;;
+      "MARIADB_10.10")
+        wget -qO- https://mariadb.org/mariadb_release_signing_key.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/mariadb.gpg
+        echo "deb [arch=amd64,arm64] http://mirror.mariadb.org/repo/10.10/debian bullseye main" > /etc/apt/sources.list.d/mariadb.list
+        apt -y update
+        apt -y install mariadb-server
+      ;;
+      "MARIADB_10.11")
+        wget -qO- https://mariadb.org/mariadb_release_signing_key.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/mariadb.gpg
+        echo "deb [arch=amd64,arm64] http://mirror.mariadb.org/repo/10.11/debian bullseye main" > /etc/apt/sources.list.d/mariadb.list
+        apt -y update
+        apt -y install mariadb-server
+      ;;
       *)
         die "Database Engine $DB_ENGINE not supported."
       ;;
