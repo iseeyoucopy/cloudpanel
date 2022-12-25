@@ -96,7 +96,7 @@ checkDatabaseEngine()
 {
   if [ "$OS_NAME" = "Debian" ]; then
       case $DB_ENGINE in
-        "MYSQL_5.7" | "MYSQL_8.0" | "MARIADB_10.7" | "MARIADB_10.8" | "MARIADB_10.9")
+        "MYSQL_5.7" | "MYSQL_8.0" | "MARIADB_10.7" | "MARIADB_10.8" | "MARIADB_10.9" | "MARIADB_10.10" | "MARIADB_10.11")
           echo "Database Engine: $DB_ENGINE"
         ;;
         *)
@@ -106,7 +106,7 @@ checkDatabaseEngine()
     else
       # Ubuntu 22.04
       case $DB_ENGINE in
-        "MYSQL_8.0" | "MARIADB_10.6" | "MARIADB_10.8" | "MARIADB_10.9")
+        "MYSQL_8.0" | "MARIADB_10.6" | "MARIADB_10.8" | "MARIADB_10.9" | "MARIADB_10.10" | "MARIADB_10.11")
           echo "Database Engine: $DB_ENGINE"
         ;;
         *)
